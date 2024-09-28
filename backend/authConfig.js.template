@@ -1,0 +1,24 @@
+const passportConfig = {
+    credentials: {
+        tenantID: "<your-tenant-id>",
+        clientID: "<your-client-id>"
+    },
+    metadata: {
+        authority: "login.microsoftonline.com",
+        discovery: ".well-known/openid-configuration",
+        version: "v2.0"
+    },
+    settings: {
+        validateIssuer: true,
+        passReqToCallback: true,
+        loggingLevel: "info",
+        loggingNoPII: true,
+    },
+    protectedRoutes: {
+        api: {
+            endpoint: "/access_as_user",
+        }
+    }
+}
+
+module.exports = passportConfig;
